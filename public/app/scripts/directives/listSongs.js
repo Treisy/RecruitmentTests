@@ -9,20 +9,24 @@ appDirectives.directive('listSongs', function () {
         restrict: 'E',
         scope: {},
         templateUrl: 'views/listSongs.html',
-        controller: function($scope, SongsService){
-            $scope.list = SongsService.list();
+        controller: function($scope, $http) {
+            //Get all the songs
+            $http.get('../songs', {
 
-            $scope.openTab = function(url) {
+            }).success(function (data) {
+                $scope.list = data;
+            });
+
+            //Listening the event from the search
+            $scope.$on('ListSongs', function(event, songs){
+               $scope.list = songs;
+            });
+
+            //Open a new tab for the song
+            $scope.openTab = function (url) {
                 window.open(url);
             };
 
-            $scope.selectButton = function(data){
-              console.log(data);
-            };
-
-            $scope.selectFriday = function(datos) {
-                console.log(datos);
-            };
         },
         link: function(scope, element, attrs) {
 

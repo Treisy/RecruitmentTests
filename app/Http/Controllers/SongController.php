@@ -31,7 +31,7 @@ class SongController extends Controller
             $statusCode = 400;
         }
 
-        return response()->json(['data' => $songs], $statusCode);
+        return response()->json($songs, $statusCode);
 
     }
 
@@ -59,8 +59,9 @@ class SongController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param $data
      * @return Response
+     * @internal param int $id
      */
     public function show($data)
     {
@@ -79,7 +80,7 @@ class SongController extends Controller
             $statusCode = 400;
         }
 
-        return response()->json(['data' => $songs], $statusCode);
+        return response()->json($songs, $statusCode);
     }
 
     /**

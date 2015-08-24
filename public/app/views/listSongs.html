@@ -1,14 +1,14 @@
 <table class="table table-responsive table-striped">
     <tr ng-repeat="song in list">
         <td>
-            <div class="icon-play-container cursor-pointer" ng-click="openTab(song.Url)">
+            <div class="icon-play-container cursor-pointer" ng-click="openTab(song.url)">
                 <div class="icon-play"></div>
             </div>
         </td>
         <td>
             <div class="pull-left">
-                <p class="font-song margin-zero">{{song.SongName}}</p>
-                <p class="font-italic margin-zero">{{song.ArtistName}}</p>
+                <p class="font-song margin-zero">{{song.songName}}</p>
+                <p class="font-italic margin-zero">{{song.artistName}}</p>
             </div>
         </td>
         <td>

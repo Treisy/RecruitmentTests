@@ -3,7 +3,7 @@
  */
 'use strict';
 
-appServices.factory('SongsService', function() {
+appServices.factory('SongsService', function ($http) {
     var list = [
         {
             "Url": "http://www.google.com",
@@ -83,7 +83,21 @@ appServices.factory('SongsService', function() {
         return list;
     };
 
+    var allSongs = function(){
+        var songs;
+        $http.get('../songs', {
+
+        }).success(function (data) {
+            return data;
+        });
+
+        console.log(songs);
+
+        return songs;
+    };
+
     return {
-        list: listSongs
+        list: listSongs,
+        songs: allSongs
     };
 });
