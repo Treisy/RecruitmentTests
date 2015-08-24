@@ -15,10 +15,10 @@
     <!--endinject-->
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" ng-app="Songs">
         <header>
             <div class="row border-top">
-                <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-push-4 col-sm-6 col-sm-push-4">
+                <div class="col-xs-11 col-xs-offset-1 col-md-6 col-md-push-6 col-sm-6 col-sm-push-4">
                     <span class="options-header">Now Playing</span>
                     <span class="options-header">Rate Songs</span>
                 </div>
@@ -37,122 +37,7 @@
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="row">
-                        <table class="table table-responsive table-striped">
-                            <tr>
-                                <td>
-                                    <div class="icon-play-container">
-                                        <div class="icon-play"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="pull-left">
-                                        <p class="font-song margin-zero">Dame otro tequila</p>
-                                        <p class="font-italic margin-zero">Paulina Rubio</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Today</button>
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Friday</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="icon-play-container">
-                                        <div class="icon-play"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="pull-left">
-                                        <p class="font-song margin-zero">Más que tu amigo</p>
-                                        <p class="font-italic margin-zero">Marco Antonio Solís</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Today</button>
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Friday</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="icon-play-container">
-                                        <div class="icon-play"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="pull-left">
-                                        <p class="font-song margin-zero">El Estuche</p>
-                                        <p class="font-italic margin-zero">Aterciopelados</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Today</button>
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Friday</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="icon-play-container">
-                                        <div class="icon-play"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="pull-left">
-                                        <p class="font-song margin-zero">Limb by limb</p>
-                                        <p class="font-italic margin-zero">Cutty Ranks</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Today</button>
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Friday</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="icon-play-container">
-                                        <div class="icon-play"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="pull-left">
-                                        <p class="font-song margin-zero">Limb by limb</p>
-                                        <p class="font-italic margin-zero">Cutty Ranks</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Today</button>
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Friday</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="icon-play-container">
-                                        <div class="icon-play"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="pull-left">
-                                        <p class="font-song margin-zero">Somos Novios</p>
-                                        <p class="font-italic margin-zero">Luis Miguel</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Today</button>
-                                        <button type="button" class="btn btn-default button-normal font-buttons">Friday</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                        <list-songs></list-songs>
                     </div>
                 </div>
             </div>
@@ -181,6 +66,9 @@
     <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
     <!--endbower-->
     <!--inject:js-->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/directives/listSongs.js"></script>
+    <script src="scripts/services/SongsService.js"></script>
     <!--endbower-->
 </body>
 </html>

@@ -5,3 +5,24 @@ Homestead.yaml
 
 bower_components
 public/app/lib
+.idea/.name
+
+.idea/encodings.xml
+
+.idea/inspectionProfiles/profiles_settings.xml
+
+.idea/inspectionProfiles/Project_Default.xml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/RecruitmentTests.iml
+
+.idea/scopes/scope_settings.xml
+
+.idea/vcs.xml
+
+.idea/watcherTasks.xml
+
+.idea/workspace.xml

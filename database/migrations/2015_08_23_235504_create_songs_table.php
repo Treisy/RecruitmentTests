@@ -13,9 +13,18 @@ class CreateSongsTable extends Migration
     public function up()
     {
         Schema::create('songs', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
-            $table->string('songtName');
+            $table->unsignedInteger('album_id')->nullable();
+            $table->string('songName');
+            $table->string('url');
             $table->timestamps();
+
+        });
+
+        Schema::table('songs', function($table){
+            $table->foreign('album_id')->references('id')->on('albums');
         });
     }
 

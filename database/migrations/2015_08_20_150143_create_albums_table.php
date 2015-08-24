@@ -13,9 +13,16 @@ class CreateAlbumsTable extends Migration
     public function up()
     {
         Schema::create('albums', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
             $table->string('albumName');
+            $table->unsignedInteger('artist_id')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('albums', function($table){
+            $table->foreign('artist_id')->references('id')->on('artists');
         });
     }
 
