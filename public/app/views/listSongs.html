@@ -1,21 +1,22 @@
-<table class="table table-responsive table-striped">
-    <tr ng-repeat="song in list">
-        <td>
+<div>
+    <div class="row table-borders" ng-repeat="song in list">
+        <div class="col-xs-1">
             <div class="icon-play-container cursor-pointer" ng-click="openTab(song.url)">
                 <div class="icon-play"></div>
             </div>
-        </td>
-        <td>
-            <div class="pull-left">
+        </div>
+        <div class="col-xs-6">
+            <div>
                 <p class="font-song margin-zero">{{song.songName}}</p>
                 <p class="font-italic margin-zero">{{song.artistName}}</p>
             </div>
-        </td>
-        <td>
+        </div>
+        <div class="col-xs-4 pull-right">
             <div class="btn-group pull-right">
                 <button type="button" class="btn btn-default button-normal font-buttons">Today</button>
                 <button type="button" class="btn btn-default button-normal font-buttons">Friday</button>
             </div>
-        </td>
-    </tr>
-</table>
+        </div>
+    </div>
+</div>
+

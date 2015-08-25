@@ -4,12 +4,11 @@
 
 'use strict';
 
-var app = angular.module('Songs', ['Songs.services', 'Songs.directives', 'ngRoute', 'pascalprecht.translate']);
+var app = angular.module('Songs', ['Songs.directives', 'pascalprecht.translate']);
 
-var appServices = angular.module('Songs.services', []);
 var appDirectives = angular.module('Songs.directives', []);
 
-app.config(function ($routeProvider, $locationProvider, $translateProvider){
+app.config(function ($locationProvider, $translateProvider){
     $translateProvider.useStaticFilesLoader({
         prefix: 'traduction/lang-',
         suffix: '.json'
@@ -22,8 +21,4 @@ app.config(function ($routeProvider, $locationProvider, $translateProvider){
         requireBase: false
     });
 
-    //$routeProvider
-    //    .when('/', {
-    //       templateUrl: index.html
-    //    });
 });

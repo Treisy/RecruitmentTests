@@ -14,6 +14,12 @@ app.controller('GeneralController', function($scope, $http){
             }).success(function (data) {
                 $scope.$broadcast('ListSongs', data);
             });
+        } else {
+            $http.get('../songs' + input, {
+
+            }).success(function (data) {
+                $scope.$broadcast('ListSongs', data);
+            });
         }
     };
 
