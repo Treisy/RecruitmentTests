@@ -1,11 +1,11 @@
 {
-  "Now Playing": "Now Playing",
-  "Rate Songs": "Rate Songs",
+  "NOW_PLAYING": "Now Playing",
+  "RATE_SONGS": "Rate Songs",
   "HANGAR O'CLOCK SONGS": "HANGAR O'CLOCK SONGS",
-  "Search Music": "Search Music",
-  "Today": "Today",
-  "Friday": "Friday",
-  "Privacy Policy": "Privacy Policy",
-  "Terms of Use": "Terms of Use",
-  "Contact Us": "Contact Us"
+  "SEARCH_MUSIC": "Search Music",
+  "TODAY": "Today",
+  "FRIDAY": "Friday",
+  "PRIVACY_POLICY": "Privacy Policy",
+  "TERMS_USE": "Terms of Use",
+  "CONTACT_US": "Contact Us"
 }

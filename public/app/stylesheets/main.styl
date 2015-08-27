@@ -7,7 +7,8 @@ $yellow = #FCD45E
 $footer-background = #0F3D4A
 $fucsia = #C03C99
 $button-normal = #FCC136
-$button-active = #E0BB31
+$border-button-active = #b29d11
+$background-button-active = #e1bc30
 $grid-light = #C0E6ED
 $grid-dark = #4DB6CA
 $input-background = #106080
@@ -19,6 +20,7 @@ body
   font-family Arial
   height 100%
   width 100%
+  background-image url("../img/background.jpg")
 
 footer
   background $footer-background
@@ -32,6 +34,8 @@ footer
   vertical-align middle
   left 0
   right 0
+  box-shadow 0px -2px 20px 0px rgba(0, 0, 0, 0.53)
+  font-weight 400
 
   .borders
     border-right 1px solid #ffff00
@@ -43,6 +47,8 @@ header
   h1
     margin-top 1.2em
     font-size 3.5em
+    color $white
+    font-weight 400
 
   .border-top
     border-top 5px solid $yellow
@@ -58,13 +64,15 @@ header
 
 .button-normal
   background $button-normal
-  border-color $button-active
+  border-color #b29d11
   padding 6px 10px
+  background: linear-gradient(0deg, #fcb314 0%, #fff476 100%);
   &:hover
-    background $button-active
+    background $background-button-active
+    border 1px solid $border-button-active
   &:focus
-    background $button-active
-    border 5px solid $button-active
+    background $background-button-active
+    border 1px solid $border-button-active
     box-shadow 0 0 0 transparent
     border-style none
 
@@ -74,13 +82,15 @@ header
 .cursor-pointer
   cursor pointer
 
+.display-inlineblock
+  display inline-block
+
 .icon-play-container
-  background #C03C99
+  background $fucsia
   border-radius 5px
   width 35px
   height 35px
   padding 8px
-  /*margin-left 0.2em*/
 
   .icon-play
     width 0
@@ -98,13 +108,15 @@ header
   input
     border-radius 30px
     padding 0.3em 0.8em
-    width 96%
+    width 100%
     background $input-background
     color $input-color
+    letter-spacing 0.01em
+    font-weight 400
 
   .icon-search
     position absolute
-    right 4.8em
+    right 2.8em
     top 0.5em
     color $yellow
 
@@ -124,3 +136,17 @@ header
   position absolute
   width 96%
   height 50%
+
+@media screen and (min-width:820px)
+  body
+    font-size 16px
+
+  footer
+    font-size 0.7em
+
+  .search-container
+    input
+      width 96%
+
+    .icon-search
+      right 4.8em

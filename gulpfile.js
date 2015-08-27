@@ -4,14 +4,12 @@ var gulp = require('gulp'),
     nib = require('nib'),
     jshint = require('gulp-jshint'),
     inject = require('gulp-inject'),
-    //gulpif = require('gulp-if'),
     minifycss = require('gulp-minify-css'),
-    //useref = require('gulp-useref'),
     uglify = require('gulp-uglify'),
     wiredep = require('wiredep').stream;
 
 
-// Preprocesa archivos Stylus a CSS
+// Stylus to CSS
 gulp.task('css', function() {
     gulp.src('./public/app/stylesheets/main.styl')
         .pipe(stylus({ use: nib()
@@ -21,7 +19,7 @@ gulp.task('css', function() {
 });
 
 
-// Busca errores en el JS y los muestra
+// Search erros in JS
 gulp.task('jshint', function() {
     return gulp.src('./public/app/scripts/**/*.js')
         .pipe(jshint('.jshintrc'))
@@ -29,7 +27,7 @@ gulp.task('jshint', function() {
         .pipe(jshint.reporter('fail'));
 });
 
-// Busca en las carpetas de estilos y js los archivos y los inyecta en el HTML
+// Inject CSS and JS in HTML
 gulp.task('inject', function() {
     var sources = gulp.src(['./public/app/scripts/**/*.js', './public/app/stylesheets/**/*.css']);
     return gulp.src('index.html', {cwd: './app'})
@@ -40,7 +38,7 @@ gulp.task('inject', function() {
         .pipe(gulp.dest('./public/app'));
 });
 
-// Inyecta las librerías que se instalan vía Bower
+// Inject lib from bower
 gulp.task('wiredep', function() {
     gulp.src('./public/app/index.html')
         .pipe(wiredep({directory: './public/app/lib' }))
@@ -48,7 +46,6 @@ gulp.task('wiredep', function() {
 });
 
 gulp.task('watch', function() {
-    //gulp.watch(['./public/app/**/*.html'], ['html']);
     gulp.watch(['./public/app/stylesheets/**/*.styl'], ['css', 'inject']);
     gulp.watch(['./public/app/scripts/**/*.js', './gulpfile.js'], ['jshint', 'inject']);
     gulp.watch(['./bower.json'], ['wiredep']);
